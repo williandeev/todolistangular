@@ -1,0 +1,3 @@
+[build]
+  publish = "dist"
+  node_version = "14.20.0"

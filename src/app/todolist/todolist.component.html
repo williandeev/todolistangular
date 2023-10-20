@@ -1,0 +1,73 @@
+<div class="container">
+
+  <h1>My To-Do List</h1>
+
+  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm" id="form-container">
+    <div>
+      <div>
+        <label for="Title">Título</label>
+      </div>
+      <input type="text" ngModel name="taskTitle" required id="input">
+    </div>
+    <div>
+      <div>
+        <label for="Description">Descrição</label>
+      </div>
+      <input type="text" ngModel name="taskDescription" required id="input">
+    </div>
+    <button id="submitButton" type="submit" class="btn">+ Adicionar</button>
+  </form>
+  <small class="text-danger">{{ warningMessage }}</small>
+
+  <table id="table-container" class="responsive-table">
+    <thead>
+      <tr>
+        <th scope="col" id="thmargin">Título</th>
+        <th scope="col" id="thmargin">Descrição</th>
+        <th scope="col" id="myCheckbox">Completa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of taskArray; index as i">
+        <td *ngIf="!t.editing; else editTitle" [ngClass]="{'disabled-row': t.Completed, 'enabled-row': !t.Completed}">
+          {{ t.Title }}
+        </td>
+        <ng-template #editTitle>
+          <td>
+            <input type="text" [(ngModel)]="t.Title" id="inputEdit">
+          </td>
+        </ng-template>
+
+        <td *ngIf="!t.editing; else editDescription" [ngClass]="{'disabled-row': t.Completed, 'enabled-row': !t.Completed}">
+          {{ t.Description }}
+        </td>
+        <ng-template #editDescription>
+          <td>
+            <input type="text" [(ngModel)]="t.Description" id="inputEdit">
+          </td>
+        </ng-template>
+
+        <td><input type="checkbox" [(ngModel)]="t.Completed" (change)="onCheck(i)" id="myCheckbox"></td>
+        <td id="acao" [ngClass]="{'disabled-row': t.Completed, 'enabled-row': !t.Completed}">
+          <button *ngIf="!t.editing" (click)="onEdit(i)" id="submitButton">Editar</button>
+          <button *ngIf="t.editing" (click)="onSave(i)" id="submitButton">Salvar</button>
+          <button *ngIf="t.editing" (click)="onCancel(i)" id="cancelButton">Fechar</button>
+          <button *ngIf="!t.editing" (click)="openDeleteConfirmation(i)" id="deleteButton">Excluir</button>
+        </td>
+      </tr>
+
+      <div class="success-message" *ngIf="successMessage">{{ successMessage }}</div>
+
+    </tbody>
+  </table>
+
+  <div id="confirmation-modal" *ngIf="showDeleteConfirmation">
+    <div class="modal-content">
+      <h2>Atenção!</h2>
+      <p>Deseja realmente excluir esta tarefa?</p>
+      <button (click)="confirmDeletion()" id="submitButton">Confirmar</button>
+      <button (click)="closeModal()" id="cancelButton">Cancelar</button>
+    </div>
+  </div>
+
+</div>

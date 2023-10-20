@@ -1,0 +1,220 @@
+.container {
+  margin-top: 30px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #8257E5;
+  font-size: bold;
+}
+
+#form-container, #table-container {
+  background-color: #444444;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+}
+
+#form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 580px;
+  height: 50px;
+}
+
+#table-container {
+  min-width: 620px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  width: 10rem;
+  padding: 5px;
+  border: 1px solid #8257E5;
+  border-radius: 10px;
+}
+
+#input {
+  margin-right: 40px;
+}
+
+#thmargin {
+  width: 10.5rem;
+}
+
+#inputEdit {
+  width: 9rem;
+  margin-right: 5px;
+}
+
+#submitButton {
+  background-color: #8257E5;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+#deleteButton {
+  background-color: #AE2F2F;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+#cancelButton {
+  background-color:transparent;
+  color: #ffffff;
+  border: 2px solid #f37373;
+  border-radius: 10px;
+  padding: 8px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+#errorMessage {
+  display: none;
+}
+
+.text-danger {
+  color: red;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a483ef !important;
+}
+
+.btn {
+  margin-top: 15px;
+}
+
+#myCheckbox {
+  text-align: center;
+  margin-left: 40px;
+}
+
+#acao {
+  text-align: right;
+}
+
+#confirmation-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #444444;
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  padding: 20px;
+  color: #ffffff;
+}
+
+
+.success-message {
+  width: 300px;
+  height: 50px;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 10%;
+  right: 5%;
+  background-color: #4CAF50;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.disabled-row {
+  text-decoration: line-through;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+
+
+
+
+@media (max-width: 572px) {
+  #form-container {
+    flex-direction: column;
+    width: 300px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 662px) {
+  #table-container {
+    min-width: 0px;
+    text-align: left;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 572px) {
+  input[type="text"] {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 662px) {
+  .responsive-table {
+    width: 90%;
+    min-width: 0;
+  }
+  .responsive-table thead {
+    display: none;
+  }
+  .responsive-table tbody tr {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #8257E5;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  .responsive-table tbody td {
+    flex-basis: 100%;
+    padding: 10px;
+    width: 100%;
+  }
+  .responsive-table tbody td:nth-child(1)::before {
+    content: "Título: ";
+    font-weight: bold;
+  }
+  .responsive-table tbody td:nth-child(2)::before {
+    content: "Descrição: ";
+    font-weight: bold;
+  }
+  .responsive-table tbody td:nth-child(3)::before {
+    content: "Completa: ";
+    font-weight: bold;
+  }
+}
