@@ -47,8 +47,11 @@
           </td>
         </ng-template>
 
-        <td><input type="checkbox" [(ngModel)]="t.Completed" (change)="onCheck(i)" id="myCheckbox"></td>
-        <td id="acao" [ngClass]="{'disabled-row': t.Completed, 'enabled-row': !t.Completed}">
+        <td>
+          <input type="checkbox" [(ngModel)]="t.Completed" (change)="onCheck(i)" id="myCheckbox"
+                 [ngClass]="{'disabled-row': t.Completed && !t.editing, 'enabled-row': !t.Completed || t.editing}">
+        </td>
+        <td id="acao">
           <button *ngIf="!t.editing" (click)="onEdit(i)" id="submitButton">Editar</button>
           <button *ngIf="t.editing" (click)="onSave(i)" id="submitButton">Salvar</button>
           <button *ngIf="t.editing" (click)="onCancel(i)" id="cancelButton">Fechar</button>
