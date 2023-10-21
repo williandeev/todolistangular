@@ -1,27 +1,28 @@
-# Todolist
+# Todolist Angular 8
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
 
-## Development server
+![image](https://github.com/williansnex/todolistangular/assets/120076321/c47dcdb4-0ba3-4345-a566-9937c71e99cf)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Você também pode acessar o site:
+[Visite o Site](https://todolistangular8.netlify.app/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Instalação
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. Clone o repositório:
 
-## Running unit tests
+    ```bash
+   git clone https://github.com/williansnex/todolist-angular.git
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd todolist-angular
 
-## Running end-to-end tests
+3. Instale as dependências:
+   ```bash
+   npm install
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+4. Inicie o aplicativo:
+   ```bash
+   ng serve
